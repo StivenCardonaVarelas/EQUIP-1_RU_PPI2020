@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 import Swal from "sweetalert2";
-class Electro extends React.Component {
+class Edit_electro extends React.Component {
   _Alerta() {
     Swal.fire(
       "Electrodomestico editado exitosamente",
@@ -59,4 +59,4 @@ class Electro extends React.Component {
     );
   }
 }
-export default Electro;
+export default Edit_electro;

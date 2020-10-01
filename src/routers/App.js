@@ -17,7 +17,7 @@ import Crear_elec from "../pages/crear_electro";
 import Consultar_electro from "../pages/consultar_electro";
 import Calculo_usuario from "../pages/calculo_usuario";
 import Consumo_total from "../pages/consumo_total";
-
+import Edit_electro from "../pages/edit_electro";
 const App = () => {
   return (
     <BrowserRouter>
@@ -39,6 +39,7 @@ const App = () => {
         <Route exact path="/consultar_electro" component={Consultar_electro} />
         <Route exact path="/calculo_usuario" component={Calculo_usuario} />
         <Route exact path="/consumo_total" component={Consumo_total} />
+        <Route exact path="/edit_electro" component={Edit_electro} />
       </Switch>
     </BrowserRouter>
   );
