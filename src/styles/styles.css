@@ -3,13 +3,12 @@
 }
 h1 {
   font-weight: 20;
+  color: black;
 }
 .etiqueta1per {
   text-align: center;
 }
- 
-.boton{
-   color:white;
 
-
+.boton {
+  color: white;
 }

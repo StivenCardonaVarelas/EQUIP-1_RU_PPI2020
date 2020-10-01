@@ -7,6 +7,8 @@ import Perfiles from "../pages/perfiles";
 import Contra from "../pages/contra";
 import Menu from "../pages/menu";
 import Calculo from "../pages/calculo";
+import Estrato from "../pages/estrato";
+import Crear_estrato from "../pages/crear_estrato";
 const App = () => {
   return (
     <BrowserRouter>
@@ -18,7 +20,9 @@ const App = () => {
         <Route exact path="/contra" component={Contra} />
         <Route exact path="/menu" component={Menu} />
         <Route exact path="/calculo" component={Calculo} />
-      </Switch>
+        <Route exact path="/estrato" component= {Estrato} /> 
+        <Route exact path="/crear_estrato" component= {Crear_estrato} />   
+        </Switch>
     </BrowserRouter>
   );
 };

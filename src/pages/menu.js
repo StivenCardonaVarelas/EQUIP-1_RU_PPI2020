@@ -19,10 +19,18 @@ return(
                       <br />
                       <button
                         type="button"
-                        className="btn btn-darkcontainer-fluid fondo boton">
-                        <a href="/estrato">Es</a>
-                        
+                        className="btn btn-outline-dark boton">
+                        <a href="/estrato">Estrato</a> 
                       </button>
+                      <br/>
+                      <br />
+                      <br />
+                      <button
+                        type="button"
+                        className="btn btn-outline-dark boton">
+                        <a href="/consumo">Consumo</a> 
+                      </button>
+
 
 
                 
@@ -39,5 +47,7 @@ return(
 
 }
 }
+
+
 
 export default Menu;

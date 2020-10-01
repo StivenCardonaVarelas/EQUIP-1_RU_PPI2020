@@ -16,7 +16,7 @@ class Inicio extends React.Component {
                 <br />
                 <img
                   src={logo}
-                  alt="..."
+                  alt=""
                   className="img-thumbnail border-right"
                 />
               </div>
@@ -26,7 +26,7 @@ class Inicio extends React.Component {
                 <br />
                 <br />
                 <br />
-                <h3> !!Bienvenidos¡¡ </h3>
+                <h3> !!Bienvenidos!! </h3>
               </div>
             </div>
             <div className="row">
