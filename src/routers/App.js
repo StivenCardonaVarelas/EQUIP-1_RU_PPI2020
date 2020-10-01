@@ -15,10 +15,6 @@ import Electrodo from "../pages/electrodo";
 import Consumo from "../pages/consumo";
 import Crear_elec from "../pages/crear_electro";
 import Consultar_electro from "../pages/consultar_electro";
-import Editar_electro from "../pages/edit_electro";
-import Crear_consumo from "../pages/crear_consu";
-import Editar_consumo from "../pages/edit_consu";
-import Consultar_consumo from "../pages/consultar_consu";
 
 const App = () => {
   return (
@@ -39,10 +35,6 @@ const App = () => {
         <Route exact path="/consumo" component={Consumo} />
         <Route exact path="/crear_electro" component={Crear_elec} />
         <Route exact path="/consultar_electro" component={Consultar_electro} />
-        <Route exact path="/edit_electro" component={Editar_electro} />
-        <Route exact path="/crear_consu" component={Crear_consumo} />
-        <Route exact path="/edit_consumo" component={Editar_consumo} />
-        <Route exact path="/consultar_consu" component={Consultar_consumo} />
       </Switch>
     </BrowserRouter>
   );

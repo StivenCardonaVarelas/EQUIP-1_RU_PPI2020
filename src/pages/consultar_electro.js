@@ -1,7 +1,14 @@
 import React from "react";
 import "../styles/styles.css";
-
+import Swal from "sweetalert2";
 class Electro extends React.Component {
+  _Alerta() {
+    Swal.fire(
+      "Electrodomestico eliminado con exito",
+      "Haz clink en el boton",
+      "success"
+    );
+  }
   render() {
     return (
       <div className="container-fluid fondo">
