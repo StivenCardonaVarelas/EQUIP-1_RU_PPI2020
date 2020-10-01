@@ -31,17 +31,17 @@ class Registro extends React.Component {
                   <div className="col text-center">
                     <br />
 
-                    <button type="button" className="btn btn-outline-dark">
+                    <button type="button" className="btn btn-outline-dark boton">
                       <a href="/perfiles">Guardar</a>
                     </button>
                     <br />
                     <br />
-                    <div className="col text-center fondo">
+                    <div className="col text-center fondo ">
                       <br />
 
                       <button
                         type="button"
-                        className="btn btn-outline-dark fondo"
+                        className="btn btn-outline-dark fondo boton"
                       >
                         <a className="container-fluid fondo" href="/">
                           Regresar

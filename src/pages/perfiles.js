@@ -21,7 +21,7 @@ class Perfiles extends React.Component {
                   <div className="col text-center">
                     <br />
 
-                    <button type="button" className="btn btn-outline-dark">
+                    <button type="button" className="btn btn-outline-dark boton">
                       <a href="/calculo">Usuario</a>
                     </button>
                     <br />
@@ -29,13 +29,13 @@ class Perfiles extends React.Component {
                     <div className="col text-center">
                       <br />
 
-                      <button type="button" className="btn btn-outline-dark">
+                      <button type="button" className="btn btn-outline-dark boton">
                         <a href="/menu">Administrador</a>
                       </button>
                       <br />
                       <br />
                       <br />
-                      <button type="button" className="btn btn-outline-dark">
+                      <button type="button" className="btn btn-outline-dark boton">
                         <a href="/">Atras</a>
                       </button>
                       <br />

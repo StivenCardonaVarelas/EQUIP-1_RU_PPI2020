@@ -33,7 +33,7 @@ class Inicio extends React.Component {
               <div className="col text-center">
                 <br />
 
-                <button type="button" className="btn btn-outline-dark">
+                <button type="button" className="btn btn-outline-dark boton">
                   <a href="/iniciosesion">Inicio</a>
                 </button>
                 <br />
@@ -41,7 +41,7 @@ class Inicio extends React.Component {
                 <div className="col text-center">
                   <br />
 
-                  <button type="button" className="btn btn-outline-dark">
+                  <button type="button" className="btn btn-outline-dark  boton">
                     <a href="/registro">Registrate</a>
                   </button>
                   <br />

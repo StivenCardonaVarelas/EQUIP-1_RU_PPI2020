@@ -20,7 +20,7 @@ class Inicio_sesion extends React.Component {
                   <div className="col text-center">
                     <br />
 
-                    <button type="button" className="btn btn-outline-dark">
+                    <button type="button" className="btn btn-outline-dark boton ">
                       <a href="/perfiles">Ingresar</a>
                     </button>
                     <br />
@@ -28,7 +28,7 @@ class Inicio_sesion extends React.Component {
                     <div className="col text-center">
                       <br />
 
-                      <button type="button" className="btn btn-outline-dark">
+                      <button type="button" className="btn btn-outline-dark boton">
                         <a href="/">Regresar</a>
                       </button>
                       <br />
@@ -36,12 +36,18 @@ class Inicio_sesion extends React.Component {
                       <br />
                       <button
                         type="button"
-                        className="btn btn-darkcontainer-fluid fondo"
+                        className="btn btn-darkcontainer-fluid fondo boton"
                       >
                         <a href="/contra">¿Olvidaste tu contraseña?</a>
                       </button>
                       <br />
                       <br />
+                      <div className="container-fluid fondo boton">
+                        <div className="row">
+                          <div className="col text-center "></div>
+                        </div>
+                      </div>
+                      <div className="col-sm-4 col-md-4 col-lg-4 fondo"></div>
                     </div>
                   </div>
                 </div>
