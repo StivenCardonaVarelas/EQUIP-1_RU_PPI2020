@@ -19,7 +19,7 @@ class Contra extends React.Component {
                     aria-describedby="emailHelp"
                   />
                   <small id="emailHelp" className="form-text text-muted">
-                    Le llegara un correo de verificacion
+                    Le llegara un correo de verificación
                   </small>
                   <button type="submit" className="btn btn-outline-dark">
                     {" "}

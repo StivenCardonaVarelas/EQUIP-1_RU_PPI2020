@@ -12,15 +12,30 @@ class Inicio_sesion extends React.Component {
               <div className="col-lg-12">
                 <br />
                 <br />
-                <h1>usuario</h1>
+                <h1>Usuario</h1>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Nombre usuario"
+                  readonly
+                />
                 <br />
                 <br />
-                <h1>contraseña</h1>
+                <h1>Contraseña</h1>
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Contraseña"
+                  readonly
+                />
                 <div className="row">
                   <div className="col text-center">
                     <br />
 
-                    <button type="button" className="btn btn-outline-dark boton ">
+                    <button
+                      type="button"
+                      className="btn btn-outline-dark boton "
+                    >
                       <a href="/perfiles">Ingresar</a>
                     </button>
                     <br />
@@ -28,7 +43,10 @@ class Inicio_sesion extends React.Component {
                     <div className="col text-center">
                       <br />
 
-                      <button type="button" className="btn btn-outline-dark boton">
+                      <button
+                        type="button"
+                        className="btn btn-outline-dark boton"
+                      >
                         <a href="/">Regresar</a>
                       </button>
                       <br />

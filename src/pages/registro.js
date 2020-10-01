@@ -16,45 +16,72 @@ class Registro extends React.Component {
                 <br />
 
                 <h1>nombre</h1>
-                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Nombre "
+                  readonly
+                />
 
                 <h1>apellido</h1>
-                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Apellido"
+                  readonly
+                />
 
                 <h1>usuario</h1>
-                <br />
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Nombre usuario"
+                  readonly
+                />
                 <h1>contraseña</h1>
-                <br />
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Contraseña"
+                  readonly
+                />
 
                 <h1>estrato</h1>
-                <div className="row">
-                  <div className="col text-center">
-                    <br />
+                <div class="form-group">
+    <label for="exampleFormControlSelect1">Selecciona tu estrato</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Estrato 1</option>
+      <option> Estrato 2</option>
+      <option>Estrato 3 </option>
+      <option>Estrato 4 </option>
+      <option>Estrato 5 </option>
+    </select>
+  </div>
+                <br />
+                <div className="col text-center fondo ">
+                <button type="button" className="btn btn-outline-dark boton">
+                  <a href="/perfiles">Guardar</a>
+                </button>
+                <br />
+                <br />
+                <div className="col text-center fondo ">
+                  <br />
 
-                    <button type="button" className="btn btn-outline-dark boton">
-                      <a href="/perfiles">Guardar</a>
-                    </button>
-                    <br />
-                    <br />
-                    <div className="col text-center fondo ">
-                      <br />
-
-                      <button
-                        type="button"
-                        className="btn btn-outline-dark fondo boton"
-                      >
-                        <a className="container-fluid fondo" href="/">
-                          Regresar
-                        </a>
-                      </button>
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                    </div>
-                    <br />
-                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-outline-dark fondo boton"
+                  >
+                    <a className="container-fluid fondo" href="/">
+                      Regresar
+                    </a>
+                  </button>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                 </div>
+                <br />
+              </div>
               </div>
             </div>
           </div>
