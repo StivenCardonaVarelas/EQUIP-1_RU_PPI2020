@@ -50,7 +50,7 @@ class Registro extends React.Component {
                 <div class="form-group">
     <label for="exampleFormControlSelect1">Selecciona tu estrato</label>
     <select class="form-control" id="exampleFormControlSelect1">
-      <option>Estrato 1</option>
+      <option>Estrato 1 </option>
       <option> Estrato 2</option>
       <option>Estrato 3 </option>
       <option>Estrato 4 </option>
