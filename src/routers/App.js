@@ -36,6 +36,7 @@ const App = () => {
         <Route exact path="/crear_electro" component={Crear_elec} />
         <Route exact path="/consultar_electro" component={Consultar_electro} />
         <Route exact path="/edit_electro" component={Editar_electro} />
+      
       </Switch>
       </BrowserRouter>
   

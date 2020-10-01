@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 import Swal from "sweetalert2";
-class Editar_electro extends React.Component {
+class Electro extends React.Component {
   _Alerta() {
     Swal.fire(
       "Electrodomestico editado exitosamente",
@@ -36,8 +36,10 @@ class Editar_electro extends React.Component {
                   />
                   <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
+
                 <div className="col text-center">
                   <br />
+
                   <button
                     onClick={this._Alerta}
                     ontype="button"
@@ -45,6 +47,7 @@ class Editar_electro extends React.Component {
                   >
                     <a href="/electrodo">Guardar</a>
                   </button>
+
                   <br />
                   <br />
                 </div>
@@ -56,4 +59,4 @@ class Editar_electro extends React.Component {
     );
   }
 }
-export default Editar_electro;
+export default Electro;
