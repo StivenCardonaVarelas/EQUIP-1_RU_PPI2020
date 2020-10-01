@@ -29,7 +29,7 @@ class Inicio extends React.Component {
               <div className="col text-center">
                 <br />
       <button type="button" className="btn btn-outline-dark boton">
-                  <a href="/iniciosesion">Inició</a>
+                  <a href="/iniciosesion">Inicio</a>
                 </button>
                 <br />
                 <br />
