@@ -16,8 +16,6 @@ render(){
 
 
 
-
-             
               </div>
                 </div>
                   </div>
