@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 class Crear_elec extends React.Component {
   _Alerta() {
     Swal.fire(
-      "Electrodomestico ha sido guardado con exito",
+      "Electrodomestico ha sido creado con exito",
       "Haz clink en el boton",
       "success"
     );
