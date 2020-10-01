@@ -26,7 +26,7 @@ class Inicio extends React.Component {
                 <br />
                 <br />
                 <br />
-                <h3>¡Bienvenidos!</h3>
+                <h3>luisa!</h3>
               </div>
             </div>
             <div className="row">
