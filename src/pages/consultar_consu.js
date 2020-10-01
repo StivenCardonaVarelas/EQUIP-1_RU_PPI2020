@@ -21,7 +21,7 @@ class Electro extends React.Component {
                         <input
                           className="form-control mr-sm-2"
                           type="search"
-                          placeholder="Ingresa un electrodomestico"
+                          placeholder="Ingresa consumo"
                           aria-label="Search"
                         />
                         <button
