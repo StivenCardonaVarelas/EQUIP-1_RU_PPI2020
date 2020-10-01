@@ -38,15 +38,15 @@ class Crear_elec extends React.Component {
                 </div>
 
                 <div className="col text-center">
-                 
-                  <br />
-                  <br />
-                  <button onClick={this._Alerta} type="button" className="btn btn-outline-dark boton">
+                  <button
+                    onClick={this._Alerta}
+                    type="button"
+                    className="btn btn-outline-dark boton"
+                  >
                     <a href="/electrodo">Guardar</a>
                   </button>
                   <br />
                   <br />
-                 
                 </div>
               </div>
             </div>
