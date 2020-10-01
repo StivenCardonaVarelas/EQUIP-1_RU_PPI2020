@@ -15,7 +15,7 @@ class Registro extends React.Component {
               <div className="col-lg-12">
                 <br />
                 <br />
-                <h1>Cedula</h1>
+                <h1>Cédula</h1>
 
                 <input
                   class="form-control"

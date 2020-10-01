@@ -64,7 +64,7 @@ class Estrato extends React.Component {
                   <br />
                   <br />
                   <button type="button" className="btn btn-outline-dark boton">
-                    <a href="/menu">Atras</a>
+                    <a href="/menu">Atrás</a>
                   </button>
                 </div>
               </div>

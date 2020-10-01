@@ -23,7 +23,7 @@ class Menu extends React.Component {
                 <br />
                 <br />
                 <button type="button" className="btn btn-outline-dark boton">
-                  <a href="/consumo">Consumó</a>
+                  <a href="/consumo">Consumo</a>
                 </button>
                 <br />
                 <br />
