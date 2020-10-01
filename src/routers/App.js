@@ -14,6 +14,7 @@ import Consultar_estrato from "../pages/consultar_estrato";
 import Electrodo from "../pages/electrodo";
 import Consumo from "../pages/consumo";
 import Crear_elec from "../pages/crear_electro";
+import Consultar_electro from "../pages/consultar_electro"
 
 const App = () => {
   return (
@@ -33,9 +34,11 @@ const App = () => {
         <Route exact path="/electrodo" component={Electrodo} />
         <Route exact path="/consumo" component={Consumo} />
         <Route exact path="/crear_electro" component={Crear_elec} />
+        <Route exact path="/consultar_electro" component={Consultar_electro} />
       </Switch>
-    </BrowserRouter>
-  );
+      </BrowserRouter>
+  
+  )   
 };
 
 export default App;
