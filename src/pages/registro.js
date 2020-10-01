@@ -12,10 +12,16 @@ class Registro extends React.Component {
               <div className="col-lg-12">
                 <br />
                 <br />
-                <h1>cedula</h1>
-                <br />
+                <h1>Cedula</h1>
 
-                <h1>nombre</h1>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Identificación"
+                ón
+                  readonly
+                />
+                <h1>Nombre</h1>
                 <input
                   class="form-control"
                   type="text"
@@ -23,7 +29,7 @@ class Registro extends React.Component {
                   readonly
                 />
 
-                <h1>apellido</h1>
+                <h1>Apellido</h1>
                 <input
                   class="form-control"
                   type="text"
@@ -31,14 +37,14 @@ class Registro extends React.Component {
                   readonly
                 />
 
-                <h1>usuario</h1>
+                <h1>Usuario</h1>
                 <input
                   class="form-control"
                   type="text"
                   placeholder="Nombre usuario"
                   readonly
                 />
-                <h1>contraseña</h1>
+                <h1>Contraseña</h1>
                 <input
                   class="form-control"
                   type="password"
@@ -46,42 +52,44 @@ class Registro extends React.Component {
                   readonly
                 />
 
-                <h1>estrato</h1>
+                <h1>Estrato</h1>
                 <div class="form-group">
-    <label for="exampleFormControlSelect1">Selecciona tu estrato</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Estrato 1 </option>
-      <option> Estrato 2</option>
-      <option>Estrato 3 </option>
-      <option>Estrato 4 </option>
-      <option>Estrato 5 </option>
-    </select>
-  </div>
+                  <label for="exampleFormControlSelect1">
+                    Selecciona tu estrato
+                  </label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Estrato 1 </option>
+                    <option> Estrato 2</option>
+                    <option>Estrato 3 </option>
+                    <option>Estrato 4 </option>
+                    <option>Estrato 5 </option>
+                  </select>
+                </div>
                 <br />
                 <div className="col text-center fondo ">
-                <button type="button" className="btn btn-outline-dark boton">
-                  <a href="/perfiles">Guardar</a>
-                </button>
-                <br />
-                <br />
-                <div className="col text-center fondo ">
-                  <br />
-
-                  <button
-                    type="button"
-                    className="btn btn-outline-dark fondo boton"
-                  >
-                    <a className="container-fluid fondo" href="/">
-                      Regresar
-                    </a>
+                  <button type="button" className="btn btn-outline-dark boton">
+                    <a href="/perfiles">Guardar</a>
                   </button>
                   <br />
                   <br />
-                  <br />
+                  <div className="col text-center fondo ">
+                    <br />
+
+                    <button
+                      type="button"
+                      className="btn btn-outline-dark fondo boton"
+                    >
+                      <a className="container-fluid fondo" href="/">
+                        Regresar
+                      </a>
+                    </button>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </div>
                   <br />
                 </div>
-                <br />
-              </div>
               </div>
             </div>
           </div>
