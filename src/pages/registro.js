@@ -1,7 +1,10 @@
 import React from "react";
 import "../styles/styles.css";
-
+import Swal from "sweetalert2";
 class Registro extends React.Component {
+  _Alerta() {
+    Swal.fire("Registro exitoso", "Haz clink en el boton", "success");
+  }
   render() {
     return (
       <div className="container-fluid fondo">
@@ -18,7 +21,7 @@ class Registro extends React.Component {
                   class="form-control"
                   type="text"
                   placeholder="Identificación"
-                ón
+                  ón
                   readonly
                 />
                 <h1>Nombre</h1>
@@ -59,7 +62,7 @@ class Registro extends React.Component {
                   </label>
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option>Estrato 1 </option>
-                    <option> Estrato 2</option>
+                    <option>Estrato 2</option>
                     <option>Estrato 3 </option>
                     <option>Estrato 4 </option>
                     <option>Estrato 5 </option>
@@ -67,7 +70,11 @@ class Registro extends React.Component {
                 </div>
                 <br />
                 <div className="col text-center fondo ">
-                  <button type="button" className="btn btn-outline-dark boton">
+                  <button
+                    onClick={this._Alerta}
+                    type="button"
+                    className="btn btn-outline-dark boton"
+                  >
                     <a href="/perfiles">Guardar</a>
                   </button>
                   <br />
@@ -79,7 +86,7 @@ class Registro extends React.Component {
                       type="button"
                       className="btn btn-outline-dark fondo boton"
                     >
-                      <a className="container-fluid fondo" href="/">
+                      <a className="container-fluid " href="/">
                         Regresar
                       </a>
                     </button>

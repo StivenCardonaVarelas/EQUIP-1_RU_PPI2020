@@ -1,7 +1,14 @@
 import React from "react";
 import "../styles/styles.css";
-
+import Swal from "sweetalert2";
 class Inicio_sesion extends React.Component {
+  _Alerta() {
+    Swal.fire(
+      "Inicio sesion exitoso",
+      "Haz clink en el boton",
+      "sucess"
+    );
+  }
   render() {
     return (
       <div className="container-fluid fondo">
@@ -32,7 +39,7 @@ class Inicio_sesion extends React.Component {
                   <div className="col text-center">
                     <br />
 
-                    <button
+                    <button  onClick={this._Alerta}
                       type="button"
                       className="btn btn-outline-dark boton "
                     >

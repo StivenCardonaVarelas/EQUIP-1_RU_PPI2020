@@ -22,23 +22,26 @@ class Inicio extends React.Component {
                 <br />
                 <br />
                 <br />
-                <h3> ¡¡Bienvenidos!! </h3>
+                <h3> !!Bienvenidos!! </h3>
               </div>
             </div>
             <div className="row">
               <div className="col text-center">
                 <br />
-
-                <button type="button" className="btn btn-outline-dark boton">
-                  <a href="/iniciosesion">Inicio</a>
+      <button type="button" className="btn btn-outline-dark boton">
+                  <a href="/iniciosesion">Inició</a>
                 </button>
                 <br />
                 <br />
                 <div className="col text-center">
                   <br />
 
-                  <button type="button" className="btn btn-outline-dark  boton">
-                    <a href="/registro">Registrate</a>
+                  <button
+                    onClick={this._Alerta}
+                    type="button"
+                    className="btn btn-outline-dark  boton"
+                  >
+                    <a href="/registro">Regístrate</a>
                   </button>
                   <br />
                   <br />

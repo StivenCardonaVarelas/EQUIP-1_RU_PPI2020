@@ -11,7 +11,7 @@ class Contra extends React.Component {
               <div className="col-lg-12">
                 <form>
                   <div className="form-group" />
-                  <label for="exampleInputEmail1">Correo electronico</label>
+                  <label for="exampleInputEmail1">Correo electrónico</label>
                   <input
                     type="email"
                     className="form-control"
@@ -19,7 +19,7 @@ class Contra extends React.Component {
                     aria-describedby="emailHelp"
                   />
                   <small id="emailHelp" className="form-text text-muted">
-                    Le llegara un correo de verificación
+                    Te llegará un correo de verificación
                   </small>
                   <button type="submit" className="btn btn-outline-dark">
                     {" "}

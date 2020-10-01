@@ -22,7 +22,7 @@ class Perfiles extends React.Component {
                     <br />
 
                     <button type="button" className="btn btn-outline-dark boton">
-                      <a href="/calculo">Usuario</a>
+                      <a href="/calculo_usuario">Usuario</a>
                     </button>
                     <br />
                     <br />
@@ -36,7 +36,7 @@ class Perfiles extends React.Component {
                       <br />
                       <br />
                       <button type="button" className="btn btn-outline-dark boton">
-                        <a href="/">Atras</a>
+                        <a href="/">Regresar</a>
                       </button>
                       <br />
                       <br />
