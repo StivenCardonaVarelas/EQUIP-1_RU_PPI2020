@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 import Swal from "sweetalert2";
-class Crear_elec extends React.Component {
+class Crear_consu extends React.Component {
   _Alerta() {
     Swal.fire(
       "Consumo ha sido creado con exito",
@@ -56,4 +56,4 @@ class Crear_elec extends React.Component {
     );
   }
 }
-export default Crear_elec;
+export default Crear_consu;

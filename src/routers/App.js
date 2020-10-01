@@ -19,8 +19,9 @@ import Calculo_usuario from "../pages/calculo_usuario";
 import Consumo_total from "../pages/consumo_total";
 import Edit_electro from "../pages/edit_electro";
 import Crear_consu from "../pages/crear_consu";
-import Consultar_consu from "../pages/consultar_consu";
+ import Consultar_consu from"../pages/consultar_consu";
 import Edit_consu from "../pages/edit_consu";
+
 
 const App = () => {
   return (
@@ -47,9 +48,8 @@ const App = () => {
         <Route exact path="/crear_consu" component={Crear_consu} />
         <Route exact path="/consultar_consu" component={Consultar_consu} />
         <Route exact path="/edit_consu" component={Edit_consu} />
-        <Route exact path="/consultar_consu" component={Consultar_consu} />
-        <Route exact path="/edit_consu" component={Edit_consu} />
-      </Switch>
+        
+        </Switch>
     </BrowserRouter>
   );
 };
