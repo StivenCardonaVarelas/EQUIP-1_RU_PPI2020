@@ -19,28 +19,38 @@ class Electro extends React.Component {
               <div className=" col-lg-12">
                 <div className="form-group">
                   <div className="col text-center">
-                  
-                  <h1> Buscar electrodomestico</h1>
-                  <br/>
-                  <br/>
-                  
-                  <nav className="navbar ">
-                    <form className="form-inline">
-                      <input
-                        className="form-control mr-sm-2"
-                        type="search"
-                        placeholder="Buscar consumo"
-                        aria-label="Search"
-                      />
+                    <h1> Buscar electrodomestico</h1>
+                    <br />
+                    <br />
+
+                    <nav className="navbar ">
+                      <form className="form-inline">
+                        <input
+                          className="form-control mr-sm-2"
+                          type="search"
+                          placeholder="Ingresa un electrodomestico"
+                          aria-label="Search"
+                        />
+                        <button
+                          className="btn btn-outline-success my-2 my-sm-0"
+                          type="submit"
+                        >
+                          Buscar
+                        </button>
+                      </form>
+                    </nav>
+
+                    <div className=" col-xl-8">
+                      <br />
+                      <br />
+                      <br />
                       <button
-                        className="btn btn-outline-success my-2 my-sm-0"
-                        type="submit"
+                        type="button"
+                        className="btn btn-outline-dark boton"
                       >
-                        Buscar
+                        <a href="/electrodo">Atras</a>
                       </button>
-                    </form>
-                  </nav>
-                  
+                    </div>
                   </div>
                 </div>
               </div>
