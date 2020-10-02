@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 class Editar_estrato extends React.Component {
   _Alerta() {
     Swal.fire(
-      "Estrato eliminado con exito",
+      "Estrato editado con exito",
       "Haz clink en el boton",
       "success"
     );
