@@ -31,6 +31,14 @@ class Consumo_total extends React.Component {
               <br />
               <br />
               <br />
+              <button
+                type="button"
+                className="btn btn-outline-dark fondo boton"
+              >
+                <a className="container-fluid " href="/calculo_usuario">
+                  Atras
+                </a>
+              </button>
             </div>
           </div>
         </div>
