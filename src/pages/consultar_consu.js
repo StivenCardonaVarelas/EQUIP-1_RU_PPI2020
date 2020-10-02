@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 
-class Electro extends React.Component {
+class Consular_consu extends React.Component {
   render() {
     return (
       <div className="container-fluid fondo">
@@ -54,4 +54,4 @@ class Electro extends React.Component {
     );
   }
 }
-export default Electro;
+export default Consular_consu;

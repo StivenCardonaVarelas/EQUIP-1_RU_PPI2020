@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/styles.css";
 import Swal from "sweetalert2";
-class Electro extends React.Component {
+class Consultar_electro extends React.Component {
   _Alerta() {
     Swal.fire(
-      "Electrodomestico eliminado con exito",
+      "Electrodomestico econtrado  con exito",
       "Haz clink en el boton",
       "success"
     );
@@ -19,19 +19,20 @@ class Electro extends React.Component {
               <div className=" col-lg-12">
                 <div className="form-group">
                   <div className="col text-center">
-                    <h1> Buscar electrodomestico</h1>
+                    <h1> Buscar un electrodomestico</h1>
                     <br />
                     <br />
 
                     <nav className="navbar ">
                       <form className="form-inline">
                         <input
-                          className="form-control mr-sm-2"
+                          className="form-control mr-sm-2 campo"
                           type="search"
-                          placeholder="Ingresa un electrodomestico"
+                          placeholder="Ingresar electrodomestico"
                           aria-label="Search"
                         />
                         <button
+                          onClick={this._Alerta}
                           className="btn btn-outline-success my-2 my-sm-0"
                           type="submit"
                         >
@@ -61,4 +62,4 @@ class Electro extends React.Component {
     );
   }
 }
-export default Electro;
+export default Consultar_electro;
