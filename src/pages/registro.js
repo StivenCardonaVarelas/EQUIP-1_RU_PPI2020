@@ -3,7 +3,7 @@ import "../styles/styles.css";
 import Swal from "sweetalert2";
 class Registro extends React.Component {
   _Alerta() {
-    Swal.fire("Registro exitoso", "Haz clikc en el boton", "success");
+    Swal.fire("Registro exitoso", "Haz click en el boton", "success");
   }
   render() {
     return (
