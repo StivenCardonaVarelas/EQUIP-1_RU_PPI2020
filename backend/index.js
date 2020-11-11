@@ -4,8 +4,8 @@ const app=express();
 //const modulos=require('./routes/modulos');
 const estrato=require('./routes/estrato');
 const Cestrato=require('./routes/costo_Estrato');
-
-
+const Aestrato=require('./routes/estrato');
+const electro=require('./routes/electrodomestico');
 
 //ajustes
 app.set('port', 3000); //puerto unico //firewall
@@ -18,6 +18,8 @@ app.use(express.json());
 
 app.use('/api', estrato);
 app.use('/api', Cestrato);
+app.use('/api', Aestrato);
+appi.use('/api', electro);
 //app.use('/api/modulos', modulos);
 //app.use('/api/colegios', colegios)
 
