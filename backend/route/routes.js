@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const mysqlConnection = require('../db/db')
 
+
+
+//ESTRATO:
 //middleware
 router.get('/estrato', (req, res) => {
     //callbacks
@@ -15,10 +18,7 @@ router.get('/estrato', (req, res) => {
             console.log(err);
 
         }
-
-
-
-    })//fin query 
+      })//fin query 
 })//fin del get
 
 //agregar un nuevo estrato
@@ -35,6 +35,42 @@ router.post('/nuevo-estrato', (req, res) => {
         }
     })//finquery
 })//finpost
+
+//actualizar un estrato
+router.put('/estrato', (req, res) => {
+    const { nombre } = req.body;
+    const { codigo } = req.params;
+    mysqlConnection.query(`UPDATE Estrato SET codigo=?,nombre=? WHERE codigo=?`,
+        [ nombre, codigo], (err, rows, fields) => {
+            if (!err) {
+
+                res.json({ status: `Estrato Actualizado exitosamente` });
+            } else {
+                console.log(err);
+            }
+        })
+});//fin actua estrato
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//COSTO_ESTRATO
+
 
 //middleware costo_Estrato
 router.get('/costo_Estrato', (req, res) => {
@@ -70,4 +106,22 @@ router.post('/nuevo-cestrato', (req, res) => {
         }
     })//finquery
 })//finpost
+
+//actualizar un costo_estrato
+router.put('/costo_estrato', (req, res) => {
+    const { costo } = req.body;
+    const { estrato } = req.params;
+    mysqlConnection.query(`UPDATE costo_Estrato SET costo=?,estrato=? WHERE costo=?`,
+        [ costo, estrato], (err, rows, fields) => {
+            if (!err) {
+
+                res.json({ status: `costo_Estrato Actualizado exitosamente` });
+            } else {
+                console.log(err);
+            }
+        })
+});//fin actua estrato
+
+
+
 module.exports = router;
