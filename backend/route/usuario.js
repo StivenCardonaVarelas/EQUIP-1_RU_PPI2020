@@ -59,7 +59,20 @@ router.get('/usuario/:cedula',(req,res)=>{
 }) // fin buscar 
 
 //eliminar
+router.delete('/usuario/:cedula',(req,res)=>{
+    const cedula = req.params.cedula;
 
+    if(!cedula){
+        res.status(401).json({error: "Debe especificar la cedula del usuario a eliminar."});
+    } else {
+        const indexUsuario = usuario.findIndex((usuario)=> usuario.cedula ===cedula);
+        cedula.splice(indexUsuario, 1);
+        const json_usuario = JSON.stringify(usuario);
+        fs.writeFileSync('./usuario.json',json_usuario,"utf-8");
+
+        res.status(200).json(usuario);
+    }
+});
 
 
 
