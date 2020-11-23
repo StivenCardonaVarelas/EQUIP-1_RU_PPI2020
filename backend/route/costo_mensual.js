@@ -52,4 +52,15 @@ router.get('/costo_mensual/:IdcostoM',(req,res)=>{
     })
 }) // fin buscar 
 
+router.delete('/costo_mensual/:IdcostoM', (req,res) => {
+    const {IdcostoM} = req.params;
+    mysqlConnection.query('DELETE  FROM costo_Mensual WHERE IdcostoM =?', [IdcostoM], (err, rows, fields) =>{
+        if(!err){
+            res.json({ status:'costo mensual eliminado'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
 module.exports = router;
