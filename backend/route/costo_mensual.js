@@ -64,20 +64,6 @@ router.delete('/costo_mensual/:IdcostoM', (req,res) => {
 });
 
 
-router.post('/nuevo-costo_mensual', (req, res) => {
-    const { Electrodomestico, Cantidad, Potencia, Horas_uso, Consumo_diario, Consumo_mensual } = req.body;//1 Captura
-    let costo_mensual = [Electrodomestico, Cantidad, Potencia, Horas_uso, Consumo_diario, Consumo_mensual];// Arreglo json
-    //Definir el scrip sql en una variable
-    let nuevoCosto_mensual = 'SELECT * FROM costo_Mensual(Electrodomestico, Cantidad, Potencia, Horas_uso, Consumo_diario, Consumo_mensual) value(?,?,?,?,?,?)';
-    mysqlConnection.query(nuevoCosto_mensual, costo_mensual, (err, results, fields) => {
-        //Si hay error
-        if (!err) {
-            //Verdadero
-            return console.error(err.message);
-        } else {//Si no
-            //Falso
-            res.json({ message: 'costo_mensual creado' });
-        }//Fin Si
-    })
-})//Fin guardar un consumo
+
+
 module.exports = router;
