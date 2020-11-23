@@ -31,20 +31,25 @@ router.post('/nuevo-usuario', (req, res) => {
 })//Fin guardar un usuario
 
 //actilizar
-router.put('/usuario/', (req, res) => {
-    const { nombre, apellido, usuario, contrasena, estrato } = req.body;
-    const { cedula } = req.params;
-    mysqlConnection.query(`UPDATE Registro_usuario SET cedula=?,nombre=?,apellido=?,usuario=?,
-        contrasena=?,estrato=?, WHERE cedula=?`,
-        [ cedula, nombre, apellido, usuario, contrasena, estrato, cedula], (err, rows, fields) => {
-            if (!err) {
 
+
+router.put('/usuario/:cedula', (req, res) => {
+    const {  Nombre, Apellido, Usuario, Contraseña, Estrato  } = req.body;
+
+    const {  Cedula } = req.params;
+
+    mysqlConnection.query(`UPDATE Registro_usuario SET Nombre= ?,Apellido= ?,Usuario= ?,
+        Contraseña= ?,Estrato= ? WHERE Cedula= ?`,
+
+        [  Nombre, Apellido, Usuario, Contraseña, Estrato, Cedula], (err, rows, fields) => {
+            if (!err) {
                 res.json({ status: `usuario Actualizado` });
             } else {
                 console.log(err);
             }
-        })
+        });
 });
+
 
 //bucar
 router.get('/usuario/:cedula',(req,res)=>{
@@ -59,21 +64,16 @@ router.get('/usuario/:cedula',(req,res)=>{
 }) // fin buscar 
 
 //eliminar
-router.delete('/usuario/:cedula',(req,res)=>{
-    const cedula = req.params.cedula;
-
-    if(!cedula){
-        res.status(401).json({error: "Debe especificar la cedula del usuario a eliminar."});
-    } else {
-        const indexUsuario = usuario.findIndex((usuario)=> usuario.cedula ===cedula);
-        cedula.splice(indexUsuario, 1);
-        const json_usuario = JSON.stringify(usuario);
-        fs.writeFileSync('./usuario.json',json_usuario,"utf-8");
-
-        res.status(200).json(usuario);
-    }
+router.delete('/usuario/:cedula', (req,res) => {
+    const {cedula} = req.params;
+    mysqlConnection.query('DELETE  FROM Registro_usuario WHERE cedula =?', [cedula], (err, rows, fields) =>{
+        if(!err){
+            res.json({ status:'usuario eliminado'});
+        }else{
+            console.log(err);
+        }
+    });
 });
-
 
 
 
