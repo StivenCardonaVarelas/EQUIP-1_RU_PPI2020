@@ -13,43 +13,38 @@ router.get('/usuario', (req, res) => {
 })// fin
 
 //crear usuario
-router.post('/nuevo-usuario', (req, res) => {
-    const { usuario, usuarioprefijo } = req.body;//1 Captura
-    let usuarioArreglo = [usuario, usuarioprefijo];// Arreglo json
-    //Definir el scrip sql en una variable
-    let nuevoUsuario = 'SELECT * FROM Registro_usuario(modulo,mod) value(?,?)';
-    mysqlConnection.query(nuevoUsuario, usuarioArreglo, (err, results, fields) => {
-        //Si hay error
-        if (!err) {
-            //Verdadero
+router.post('/nuevo-usuario',(req,res)=>{
+    const{Cedula, Nombre, Apellido, Usuario, Contraseña, Estrato }=req.body;
+
+    let usuario = [Cedula, Nombre, Apellido, Usuario, Contraseña, Estrato ];
+
+    let nuevoUsario = `INSERT INTO Registro_usuario   (Cedula,Nombre, Apellido, Usuario, Contraseña, Estrato)VALUES(?,?,?,?,?,?)`;
+
+    mysqlConnection.query(nuevoUsario,usuario,(err,results,fields)=>{
+        if(err){
             return console.error(err.message);
-        } else {//Si no
-            //Falso
-            res.json({ message: 'usuario creado' });
-        }//Fin Si
-    })
-})//Fin guardar un usuario
+        }else{
+            res.json({message:`usuario creado exitosamente`});
+        }
+    });
+});//Fin guardar un usuario
 
 //actilizar
+router.put('/usuario/:Cedula', (req, res) => {
+    const { Nombre, Apellido, Usuario, Contraseña, Estrato } = req.body;
 
+    const { Cedula } = req.params;
 
-router.put('/usuario/:cedula', (req, res) => {
-    const {  Nombre, Apellido, Usuario, Contraseña, Estrato  } = req.body;
+    mysqlConnection.query(`UPDATE Registro_usuario SET Nombre = ?, Apellido = ?, Usuario = ?, Contraseña = ?, Estrato = ?  WHERE Cedula = ?`,
 
-    const {  Cedula } = req.params;
-
-    mysqlConnection.query(`UPDATE Registro_usuario SET Nombre= ?,Apellido= ?,Usuario= ?,
-        Contraseña= ?,Estrato= ? WHERE Cedula= ?`,
-
-        [  Nombre, Apellido, Usuario, Contraseña, Estrato, Cedula], (err, rows, fields) => {
+        [ Nombre, Apellido, Usuario, Contraseña, Estrato, Cedula ], (err, rows, fields) => {
             if (!err) {
-                res.json({ status: `usuario Actualizado` });
+                res.json({ status: `Usuario Actualizado` });
             } else {
                 console.log(err);
             }
         });
 });
-
 
 //bucar
 router.get('/usuario/:cedula',(req,res)=>{
