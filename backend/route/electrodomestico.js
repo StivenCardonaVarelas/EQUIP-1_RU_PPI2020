@@ -21,6 +21,55 @@ router.get('/electrodomestico', (req, res) => {
 })//fin del get
 
 
+
+//agregar un nuevo Electrodomestico
+router.post('/nuevo-electrodomestico',(req,res)=>{
+    const{IdElectrodomestico, Codigo, Nombre }=req.body;
+
+    let electrodomestico = [ IdElectrodomestico,Codigo, Nombre ];
+
+    let nuevoElectrodomestico = `INSERT INTO electrodomestico   (IdElectrodomestico,Codigo, Nombre)VALUES(?,?,?)`;
+
+    mysqlConnection.query(nuevoElectrodomestico,electrodomestico,(err,results,fields)=>{
+        if(err){
+            return console.error(err.message);
+        }else{
+            res.json({message:`Electrodomestico creado exitosamente`});
+        }
+    });
+});//Fin guardar un usuario
+
+//actualizar un electrodomestico
+router.put('/electrodomestico/:Codigo', (req, res) => {
+    const { IdElectrodomestico, Nombre } = req.body;
+
+    const { Codigo} = req.params;
+
+    mysqlConnection.query(`UPDATE electrodomestico SET IdElectrodomestico = ?, Nombre = ?  WHERE Codigo = ?`,
+
+        [ IdElectrodomestico, Nombre, Codigo ], (err, rows, fields) => {
+            if (!err) {
+                res.json({ status: `Electrodomestico  Actualizado` });
+            } else {
+                console.log(err);
+            }
+        });
+});
+
+//ESTE ES ELIMINAR ELECTRODOMESTICO
+
+router.delete('/electrodomestico/:Codigo',(req,res)=>{
+    const {Codigo} = req.params;
+    mysqlConnection.query('DELETE  FROM electrodomestico  WHERE Codigo=? ', [Codigo], (err, rows, fields) =>{
+        if(!err){
+            res.json({ status:'Eletrodomestico eliminado'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+
 //buscar electrodomestico 
 router.get('/electrodomestico/:Codigo',(req,res)=>{
     const {Codigo} = req.params; //codigo  númerico entero
@@ -31,58 +80,5 @@ router.get('/electrodomestico/:Codigo',(req,res)=>{
             console.log(err);
         }
     })
-}) // fin buscar
-
-
-
-//agregar un nuevo Electrodomestico
-router.post('/nuevo-electrodomestico',(req,res)=>{
-    const{IdElectrodomestico, Codigo, Nombre }=req.body;
-
-    let electrodomestico = [ IdElectrodomestico,Codigo, Nombre ];
-
-    let nuevoElectrodomestico = 'INSERT INTO electrodomestico   (IdElectrodomestico,Codigo, Nombre)VALUES(?,?,?)';
-
-    mysqlConnection.query(nuevoElectrodomestico,electrodomestico,(err,results,fields)=>{
-        if(err){
-            return console.error(err.message);
-        }else{
-            res.json({message:'Electrodomestico creado exitosamente'});
-        }
-    });
-});//Fin guardar un usuario
-
-//actualizar un electrodomestico
-router.put('/electrodomestico', (req, res) => {
-    const { codigo } = req.body;
-    const { nombre } = req.params;
-    mysqlConnection.query(`UPDATE electrodomestico SET nombre=? WHERE nombre=?`,
-        [ codigo,nombre], (err, rows, fields) => {
-            if (!err) {
-
-                res.json({ status: `Electrodomestico Actualizado exitosamente`});
-            } else {
-                console.log(err);
-            }
-        })
-});//fin actua electrodomestico
-
-//ESTE ES ELIMINAR ELECTRODOMESTICO
-
-router.delete('/Electrodomestico/:nombre',(req,res)=>{
-    const nombre = req.params.nombre;
-
-    if(!nombre){
-        res.status(401).json({error: "Debes especificar el nombre del  electrodomestico que deseas eliminar"});
-    } else {
-        const indexElectrodomestico = nombre.findIndex((nombre)=> Electrodomestico.nombre ===nombre);
-        nombre.splice(indexElectrodomestico , 1);
-        const json_Electrodomestico= JSON.stringify(Electrodomestico);
-        fs.writeFileSync('./Electrodomestico.json',json_Electrodmestico,"utf-8");
-
-        res.status(200).json(Electrodomestico);
-    }
-});
-
-
+}) // fin buscar 
 module.exports=router;
