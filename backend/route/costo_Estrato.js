@@ -1,11 +1,6 @@
 const express=require('express');//tabnine
 const router=express.Router();
 const mysqlConnection =require('../db/db');
-
-
-
-
-
 //colocar middleware
 router.get('/costo_Estrato', (req, res) => {
     //callbacks
@@ -26,76 +21,67 @@ router.get('/costo_Estrato', (req, res) => {
 })//fin del get
 
 
+
+//crear costo estrato
+router.post('/nuevo-costo_estrato',(req,res)=>{
+    const{IdCodigo, Estrato, Costo}=req.body;
+
+    let costo_estrato = [IdCodigo, Estrato, Costo];
+
+    let nuevoCosto_estrato = `INSERT INTO costo_Estrato   (IdCodigo, Estrato, Costo)VALUES(?,?,?)`;
+
+    mysqlConnection.query(nuevoCosto_estrato,costo_estrato,(err,results,fields)=>{
+        if(err){
+            return console.error(err.message);
+        }else{
+            res.json({message:`Costo Estrato  creado exitosamente`});
+        }
+    });
+});//Fin guardar un usuario
+
+//actualizar un costo_estrato
+router.put('/costo_Estrato/:IdCodigo', (req, res) => {
+    const { Estrato, Costo} = req.body;
+
+    const { IdCodigo } = req.params;
+
+    mysqlConnection.query(`UPDATE costo_Estrato  SET  Estrato = ?, costo = ?  WHERE IdCodigo = ?`,
+
+        [ Estrato, Costo, IdCodigo], (err, rows, fields) => {
+            if (!err) {
+                res.json({ status: `Costo Estrato  Actualizado` });
+            } else {
+                console.log(err);
+            }
+        });
+});
+
+//ESTE ES ELIMINAR COSTO_ESTRATO
+
+router.delete('/costo_Estrato/:IdCodigo', (req,res) => {
+    const {IdCodigo } = req.params;
+    mysqlConnection.query('DELETE  FROM costo_Estrato  WHERE IdCodigo =?', [IdCodigo] , (err, rows, fields) =>{
+        if(!err){
+            res.json({ status:'Costo Estrato eliminado'});
+        }else{
+            console.log(err);
+        }
+    });
+});
+
+
+ 
 //bucar
-router.get('/costo_Estrato/:Nombre',(req,res)=>{
-    const {Nombre} = req.params; //DATO ESTRATO númerico entero
-    mysqlConnection.query('SELECT * FROM costo_Estrato WHERE Nombre =?', [Nombre],(err,rows,fields)=>{
+router.get('/costo_Estrato/:IdCodigo',(req,res)=>{
+    const {IdCodigo} = req.params; //IdCodigo númerico entero
+    mysqlConnection.query('SELECT * FROM costo_Estrato  WHERE IdCodigo =?', [IdCodigo],(err,rows,fields)=>{
         if(!err){
             res.json(rows[0])
         }else{
             console.log(err);
         }
     })
-}) // fin buscar
-
-
-
-
-
-
-
-
-
-
-//agregar un nuevo costo_Estrato
-router.post('/nuevo-costo_estrato', (req, res) => {
-    const { Idcodigo, Costo, Estrato} = req.body;
-    let costoE = [ Idcodigo, Costo, Estrato]
-
-    let nuevocostoE = `INSERT INTO costo_Estrato(Idcodigo, Costo, Estrato) VALUES (?,?,?)`;
-    mysqlConnection.query(nuevocostoE, costoE, (err, results, fields) => {
-        if (err) {
-            return console.error(err.message);
-        } else {
-            res.json({ message: ' costo_estrato creado satisfactoriamente' + Costo})
-        }
-    })//finquery
-})//finpost
-
-//actualizar un costo_estrato
-router.put('/costo_estrato', (req, res) => {
-    const { Costo } = req.body;
-    const { Estrato } = req.params;
-    mysqlConnection.query(`UPDATE costo_Estrato SET Costo=?,Estrato=? WHERE Costo=?`,
-        [ Costo, Estrato], (err, rows, fields) => {
-            if (!err) {
-
-                res.json({ status: `costo_Estrato Actualizado exitosamente` });
-            } else {
-                console.log(err);
-            }
-        })
-});//fin actua estrato
-
-//ESTE ES ELIMINAR COSTO_ESTRATO
-
-router.delete('/costo_Estrato/:Idcodigo',(req,res)=>{
-    const {Idcodigo} = req.params.Idcodigo;
-
-    if(!Idcodigo){
-        res.status(401).json({error: "Debes especificar el estrato del costo por estrato que deseas eliminar"});
-    } else {
-        const indexCosto_estrato = Costo_estrato.findIndex((Costo_estrato)=> Costo_estrato.Estrato ===Estrato);
-        Estrato.splice(indexCosto_estrato, 1);
-        const json_Costo_estrato= JSON.stringify(Costo_estrato);
-        fs.writeFileSync('./costo_Estrato.json',json_Costo_estrato,"utf-8");
-
-        res.status(200).json(Costo_estrato);
-    }
-});
-
-
-
+}) // fin buscar 
 
 
 module.exports=router;
