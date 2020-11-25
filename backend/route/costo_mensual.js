@@ -25,26 +25,30 @@ router.post('/nuevo-costo_mensual', (req, res) => {
         } else {//Si no
             //Falso
             
-            res.json({ message: 'costo mensual creado '});
+            res.json({ message: 'costo mensual creado ' + Electrodomestico });
         }//Fin Si
     })
 })//Fin guardar un costo mensual
 
 
 //actualizar un costo_mensual
-router.put('/costo_mensual', (req, res) => {
-    const {  cantidad, potencia, horas_uso, consumo_diario, consumo_mensual } = req.body;
-    const { electrodomestico } = req.params;
-    mysqlConnection.query(`UPDATE costo_Mensual SET electrodomestico, cantidad, potencia, horas_uso, consumo_diario, consumo_mensual WHERE electrodomestico=?`,
-        [electrodomestico,  cantidad, potencia, horas_uso, consumo_diario, consumo_mensual  ], (err, rows, fields) => {
+//actilizar
+router.put('/costo_mensual/:IdcostoM', (req, res) => {
+    const {Electrodomestico, Cantidad, Potencia, Horas_uso, Consumo_diario,Consumo_mensual} = req.body;
+
+    const {IdcostoM} = req.params;
+
+    mysqlConnection.query(`UPDATE costo_Mensual  SET Electrodomestico= ?, Cantidad = ?, Potencia = ?, Horas_uso = ?, Consumo_diario= ?, Consumo_mensual= ?  WHERE IdcostoM = ?`,
+
+        [ Electrodomestico, Cantidad, Potencia, Horas_uso, Consumo_diario,Consumo_mensual, IdcostoM], (err, rows, fields) => {
             if (!err) {
- 
-                res.json({ status: `costo_mensual Actualizado exitosamente` });
+                res.json({ status: `Consumo Mensual Actualizado` });
             } else {
                 console.log(err);
             }
-        })
-});//fin actua mensual
+        });
+});
+
 
 //buscar costo mensual 
 router.get('/costo_mensual/:IdcostoM',(req,res)=>{
